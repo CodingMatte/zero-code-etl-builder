@@ -1,0 +1,15 @@
+etl_config:
+  configs:
+    env: local
+    aws_iam_role: "arn:aws:iam::000000011111:role/my_awesome_iam_role"
+
+  input:
+    local_source: "my_local_path_source"
+    source_format: "csv"
+
+  output:
+    destination_format: "parquet"
+
+  operations:
+    merge_type: "overwrite"
+    transformation_name: "snake_case_column_rename"
